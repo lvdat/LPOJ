@@ -15,30 +15,30 @@
 + Lightweight, easy to deploy and customize
 + Separation of front and back ends to improve server performance
 + Support multi-machine and multi-process judgment, making judgment more efficient
-+ 支持 C/C++/Java/Python2/Python3和Swift5.1语言
-+ 支持 Special Judge和选择题判题
-+ 丰富的API，开放的源代码
-+ 一键保存和导出代码模板
-+ **支持类似LeetCode的模板题判题功能**
-+ **新增班级管理与布置作业功能**
-+ 现代化的界面 + 手机适配
-+ 实时爬取自定义用户的博客和其他OJ的做题数
-+ 丰富的算法知识和体系化的套题训练
++ Support C/C++/Java/Python2/Python3/Swift5.1
++ Support Special Judge and multiple choice questions
++ API, open source code
++ Save and export code templates with one click
++ **Support template test function similar to LeetCode**
++ **New class management and homework assignment function**
++ Modern interface + mobile phone adaptation
++ Real-time crawling of custom user blogs and other OJ questions
++ Rich algorithmic knowledge and systematic problem set training
 
 ## 模块列表
-+ [前端 Vue.js](https://github.com/Linzecong/LPOJ/tree/master/Frontend)
-+ [手机前端 Vue.js](https://github.com/Linzecong/LPOJ/tree/master/FrontendMobile)
-+ [后端 Djangorestframework](https://github.com/Linzecong/LPOJ/tree/master/Backend)
-+ [判题服务器 Python](https://github.com/Linzecong/LPOJ/tree/master/JudgerServer)
-+ [判题程序 Python](https://github.com/Linzecong/LPOJ/tree/master/Judger)
-+ [爬虫程序 Python](https://github.com/Linzecong/LPOJ/tree/master/CrawlingServer)
++ [Front end Vue.js](https://github.com/Linzecong/LPOJ/tree/master/Frontend)
++ [Mobile Front end Vue.js](https://github.com/Linzecong/LPOJ/tree/master/FrontendMobile)
++ [Backend Djangorestframework](https://github.com/Linzecong/LPOJ/tree/master/Backend)
++ [Judge Server Python](https://github.com/Linzecong/LPOJ/tree/master/JudgerServer)
++ [Judger produce Python](https://github.com/Linzecong/LPOJ/tree/master/Judger)
++ [Crawler Python](https://github.com/Linzecong/LPOJ/tree/master/CrawlingServer)
 
 
-## 使用Docker部署
+## Deploy using Docker
 
-### 环境准备
+### Preparing
 
-### 1. 安装必要的依赖
+### 1. Install the necessary dependencies
 ```
 sudo apt-get update
 sudo apt-get install -y git
@@ -46,50 +46,55 @@ sudo apt install docker.io -y
 sudo apt install docker-compose -y
 ```
 
-### 2. 开始安装
+### 2. Start installation
 
+```
+git clone https://github.com/lvdat/LPOJ.git && cd LPOJ
+```
+if you want to use original version, following by:
 ```
 git clone https://github.com/Linzecong/LPOJ.git && cd LPOJ
 ```
 
-**请修改docker-compose.yml中的数据库密码（所有的 DB_PASSWORD，MYSQL_ROOT_PASSWORD 字段）和一些你认为必要的设置**
 
-**请确保机器上 4406 8080 8000~8002 9906 端口没有被占用！**
+**Please modify the database password in docker-compose.yml (all DB_PASSWORD, MYSQL_ROOT_PASSWORD fields) and some settings you think are necessary**
+
+**Please make sure that the 4406 8080 8000~8002 9906 port on the machine is not occupied!**
 
 ```
 sudo docker-compose up -d --scale judger=3
 ```
 
-以上命令默认开启3个判题机，可以自行修改数量
+The above command turns on 3 judging machines by default, and you can modify the number by yourself
 
 
-根据网速和配置情况，大约10到20分钟就可以自动搭建完成，全程无需人工干预。
+According to the network speed and configuration, it can be automatically set up in about 10 to 20 minutes, without manual intervention in the whole process.
 
-等命令执行完成，然后运行 **sudo docker ps -a** 当看到所有的容器的状态均为 Up 就代表 OJ 已经启动成功。
+Wait for the command execution to complete, and then run **sudo docker ps -a** When you see that the status of all containers is Up, it means that OJ has started successfully.
 
-### 3. 准备工作
+### 3. Ready to work
 
-1. 安装成功后，先通过IP:8080访问OJ，注册一个用户
+1. After the installation is successful, first visit OJ through IP:8080 and register a user
 
-2. 然后进入 IP:8000/admin 以用户名admin 密码admin 登录后台（请及时修改后台密码，这个后台作用仅用于修改管理员权限，因此没有样式）
+2. Then enter IP:8000/admin and log in to the background with the username **admin** and password **admin** (please modify the background password in time, this background function is only used to modify the administrator authority, so there is no pattern)
 
-3. 修改User表中，你注册的超级用户的type为3，使得你注册的用户变为超级管理员
+3. Modify the type of the super user you registered in the User table to 3, so that the user you registered becomes a super administrator
 
-4. 以管理员登录，右上角进入管理员页面，然后在网站设置标签，提交一次设置
+4. Log in as an administrator, enter the administrator page in the upper right corner, and then on the website settings tab, submit the settings once
 
-### 4. 更新OJ
+### 4. Update OJ
 
-如要更新OJ只需在LPOJ目录下执行如下步骤
+To update OJ, just perform the following steps in the LPOJ directory
 ```
-git pull # 如果你修改了代码，自行解决merge得到情况
+git pull # If you modify the code, solve the merge situation yourself
 sudo docker-compose stop
 sudo docker-compose pull
 sudo docker-compose up -d --scale judger=3
 ```
 
-**容器运行时产生的数据会保存在对应的文件夹中，如数据库文件，题目数据等**
+**The data generated when the container is running will be saved in the corresponding folder, such as database files, title data, etc.**
 
-## 自定义OJ
+## Custom OJ
 
 首先先下载源代码
 ```
