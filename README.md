@@ -5,16 +5,16 @@
 [![travis-ci](https://travis-ci.org/Linzecong/LPOJ.svg?branch=master)](https://travis-ci.org/Linzecong/LPOJ)
 [![Join-QQ-Group](https://img.shields.io/badge/Join_QQ_Group-875136693-blue.svg?style=flat-round)](https://shang.qq.com/wpa/qunwpa?idkey=dcc9d5c63a744d5c09eda5dd7f4b208451e66b42ba633ea23ec6fa4d49135825)
 
-> 一个基于Vue.js和Django的轻量级在线评测系统
+> Aonline judge system based on Vue.js and Django
 >
-> 目前应用于广东外语外贸大学
-## 演示地址：[oj.lpoj.cn](https://oj.lpoj.cn)
-## 说明文档：[docs.lpoj.cn](https://docs.lpoj.cn)
+> Currently used in Guangdong University of Foreign Studies
+## Live at：[oj.lpoj.cn](https://oj.lpoj.cn)
+## Docs：[docs.lpoj.cn](https://docs.lpoj.cn)
 
-## 简述
-+ 轻量级，易于部署和自定义定制
-+ 前后端分离，提高服务器性能
-+ 支持多机器多进程判题，判题更高效
+## Introduction
++ Lightweight, easy to deploy and customize
++ Separation of front and back ends to improve server performance
++ Support multi-machine and multi-process judgment, making judgment more efficient
 + 支持 C/C++/Java/Python2/Python3和Swift5.1语言
 + 支持 Special Judge和选择题判题
 + 丰富的API，开放的源代码
