@@ -1075,6 +1075,9 @@ def judge(id, code, lang, problem, contest, username, submittime, contestproblem
                     )
                 GlobalVar.logger.info("Done one data!")
 
+        if lang == "Java":
+            os.system("rm -rf ./"+GlobalVar.judgername) # 删除缓存的Main.class，不然加package会运行上一次的代码……
+            
         GlobalVar.logger.info("Judge all data done, begin to save result!")
         # 所有样例评判结束，汇总结果!
         if myresult == 100:
